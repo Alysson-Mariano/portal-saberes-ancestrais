@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saber_ancestrals",
+  "info": {
+    "singularName": "saber-ancestral",
+    "pluralName": "saber-ancestrals",
+    "displayName": "Saber Ancestral"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Gastronomia",
+        "Oficinas",
+        "Entidades_Lendarias",
+        "Rituais"
+      ]
+    }
+  }
+}
