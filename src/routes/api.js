@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 
@@ -528,42 +527,4 @@ router.delete('/:categoria/:id', exigirGestorAutenticado, (req, res) => {
   return res.json({ message: 'Item removido com sucesso.', item: removido });
 });
 
-=======
-const express = require('express');
-const router = express.Router();
-const { entities, saberes, vivencias, bookings } = require('../data/mockData');
-
-router.get('/entities', (req, res) => {
-    const { category } = req.query;
-    if (category && category !== 'todos') {
-        const filtered = entities.filter(e => e.cat === category);
-        return res.json(filtered);
-    }
-    res.json(entities);
-});
-
-router.get('/saberes', (req, res) => {
-    res.json(saberes);
-});
-
-router.get('/vivencias', (req, res) => {
-    res.json(vivencias);
-});
-
-router.post('/bookings', (req, res) => {
-    const novoAgendamento = {
-        id: bookings.length + 1,
-        dataRegistro: new Date().toISOString(),
-        ...req.body
-    };
-    bookings.push(novoAgendamento);
-    console.log('Novo agendamento recebido:', novoAgendamento);
-    
-    res.status(201).json({
-        message: 'Agendamento pré-registrado com sucesso!',
-        agendamento: novoAgendamento
-    });
-});
-
->>>>>>> 2ccced2f1ec2bccd372a2437cb0714b90be3e1fa
 module.exports = router;
